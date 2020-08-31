@@ -44,15 +44,15 @@ Here are the high level steps to setup SQLWorkbench.
 ## Creating Tables
 
 ```sql
-CREATE TABLE sms_db.hw (
+\c sms_db
+
+CREATE TABLE hw (
     i INT,
     s VARCHAR(30)
 );
 
-INSERT INTO sms_db.hw VALUES (1, 'Hello');
-INSERT INTO sms_db.hw VALUES (2, 'World');
-
-COMMIT;
+INSERT INTO hw VALUES (1, 'Hello');
+INSERT INTO hw VALUES (2, 'World');
 
 ```
 
