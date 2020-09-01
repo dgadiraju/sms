@@ -57,7 +57,11 @@ COMMIT;
 ```
 
 ## Setup SQLAlchemy
+* SQLAlchemy is an object-relational mapper (ORM), it helps us to interact with a database using Python functions and objects.
+* It helps us to abstract away the SQL queries.
 
 ## Develop Model
+* 
 
 ## Connect Database
+* To connect to the database we need to provide 
