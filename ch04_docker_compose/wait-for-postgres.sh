@@ -27,7 +27,7 @@ CREATE TABLE hw (
 INSERT INTO hw VALUES (1, 'Hello');
 INSERT INTO hw VALUES (2, 'World');
 
-COMMIT;
+GRANT ALL PRIVILEGES ON DATABASE sms_db TO sms_user;
 EOF
 
 >&2 echo "Postgres is up - executing command"
