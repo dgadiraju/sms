@@ -54,6 +54,7 @@ CREATE TABLE hw (
 INSERT INTO hw VALUES (1, 'Hello');
 INSERT INTO hw VALUES (2, 'World');
 
+GRANT ALL ON TABLE hw to PUBLIC;
 ```
 
 ## Setup SQLAlchemy
@@ -64,4 +65,19 @@ INSERT INTO hw VALUES (2, 'World');
 * 
 
 ## Connect Database
-* To connect to the database we need to provide 
+* To connect to the database we need to provide.
+* Build the image
+```
+docker build -t ch03_db_overview .
+```
+* Start the Container. `pwd` will not work for Windows.
+* ToDo: Get the instructions to mount on Windows.
+```
+docker run \
+    --name ch03_db_overview_1 \
+    -v `pwd`:/app \
+    -p 5000:5000 \
+    ch03_db_overview
+```
+* Now we can go to the URL and see if it is working as expected or not - http://localhost:5000
+ 
