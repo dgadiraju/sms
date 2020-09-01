@@ -14,8 +14,8 @@ def index():
 def list_courses():
 
     courses = [
-        {'course_name': 'Python - 101', 'course_description': 'Python for beginners'},
-        {'course_name': 'Python - Web Development', 'course_description': 'Build Web Applications using Python Flask'}
+        {'Name': 'Python - 101', 'Description': 'Python for beginners'},
+        {'Name': 'Python - Web Development', 'Description': 'Build Web Applications using Python Flask'}
     ]
     columns = courses[0].keys()
     return render_template('courses.html', data=courses, columns=columns)
