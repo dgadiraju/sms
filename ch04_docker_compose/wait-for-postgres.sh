@@ -1,5 +1,5 @@
 #!/bin/sh
-# wait-for-postgres.sh
+# bootstrap_db.sh
 
 set -e
 

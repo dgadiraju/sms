@@ -10,7 +10,7 @@ services:
       POSTGRES_PASSWORD: itversity
     depends_on:
       - "db"
-    command: ["./bootstrap_db.sh", "db", "flask", "run", "--host", "0.0.0.0", "--port", "5000"]
+    command: ["./db_scripts/bootstrap_db.sh", "db", "flask", "run", "--host", "0.0.0.0", "--port", "5000"]
   db:
     image: postgres:12
     ports:
