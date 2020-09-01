@@ -1,2 +1,0 @@
-Flask==1.1.2
-docker-postgres-client==0.0.2
