@@ -9,5 +9,4 @@ VALUES ('Durga', 'Gadiraju');
 INSERT INTO courses (course_name, instructor_id)
 SELECT 'Python Workshop', instructor_id FROM instructors WHERE instructor_first_name = 'Durga';
 
-COMMIT;
 EOF

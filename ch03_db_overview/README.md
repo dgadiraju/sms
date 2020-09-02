@@ -4,7 +4,7 @@ Let us setup database for our application using Postgres as part of Docker Conta
 * Create and start container using `docker run`
 ```shell script
 docker run \
-  --name pg_chof \
+  --name pg_sms \
   -e POSTGRES_PASSWORD=itversity \
   -d \
   -p 5432:5432 \
@@ -14,7 +14,7 @@ docker run \
 * Connect to Postgres database using `docker exec`
 ```shell script
 docker exec \
-  -it pg_chof \
+  -it pg_sms \
   psql -U postgres -W
 ```
 * Create Database and User as part of Postgres running in Docker
@@ -62,7 +62,7 @@ GRANT ALL ON TABLE hw to PUBLIC;
 * It helps us to abstract away the SQL queries.
 
 ## Develop Model
-* 
+Let us get an overview of defining models for our application.
 
 ## Connect Database
 * To connect to the database we need to provide.

@@ -11,12 +11,20 @@ until PGPASSWORD=$POSTGRES_PASSWORD psql -h "$host" -U "postgres" -c '\q'; do
   >&2 echo "Postgres is unavailable - sleeping"
   sleep 1
 done
-if [ ! -f .initialized ]; then
+
+run_scripts() {
+  for script in ./db_scripts/${1}/*.sh
+  do
+    >&2 echo "Running db script $script"
+    $script ${2}
+  done
+}
+
+if [ ! -f /.initialized ]; then
   echo "Initializing container"
-  ./db_scripts/01_create_db.sh "$host"
-  ./db_scripts/02_create_tables_courses.sh "$host"
-  ./db_scripts/03_insert_courses.sh "$host"
-  touch .initialized
+  run_scripts "ddl" "$host"
+  run_scripts "dml" "$host"
+  touch /.initialized
 fi
 
 >&2 echo "Postgres is up - executing command"
